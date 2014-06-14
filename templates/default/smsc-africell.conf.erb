@@ -1,0 +1,20 @@
+group = smsc
+smsc = smpp
+smsc-id = africell
+log-file = <%= node[:kannel][:smsc_log_file] %>
+log-level = <%= node[:kannel][:smsc_log_level] %>
+host = <%= node[:kannel][:smsc_host] %>
+interface-version = 34
+transceiver-mode = true
+service-type = <%= node[:kannel][:smsc_service_type] %>
+port = <%= node[:kannel][:smsc_port] %>
+smsc-username = <%= node[:kannel][:smsc_username] %>
+smsc-password = <%= node[:kannel][:smsc_password] %>
+system-type = <%= node[:kannel][:smsc_system_type] %>
+my-number = <%= node[:kannel][:smsc_my_number] %>
+address-range = <%= node[:kannel][:smsc_address_range] %>
+#source-addr-ton = 2
+#source-addr-npi = 1
+#dest-addr-ton = 2
+#dest-addr-npi = 1
+

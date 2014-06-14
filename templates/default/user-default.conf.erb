@@ -1,0 +1,10 @@
+# default send-sms user. should generally not be used as each send-sms user
+# needing access to the gateway should have it own send-sms user declared
+group = sendsms-user
+username = <%= node[:kannel][:sendsms_username] %>
+password = <%= node[:kannel][:sendsms_password] %>
+max-messages = <%= node[:kannel][:sendsms_max_messages] %>
+concatenation = true
+#user-deny-ip = ""
+#user-allow-ip = ""
+

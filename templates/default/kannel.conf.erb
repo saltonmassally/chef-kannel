@@ -1,0 +1,44 @@
+# Sample configuration file for Kannel bearerbox on Debian.
+# See the documentation for explanations of fields.
+
+group = core
+admin-port = <%= node[:kannel][:admin_port] %>
+admin-password = <%= node[:kannel][:admin_password] %>
+status-password = <%= node[:kannel][:status_password] %>
+admin-deny-ip = <%= node[:kannel][:admin_deny_ip] %>
+admin-allow-ip = <%= node[:kannel][:admin_allow_ip] %>
+smsbox-port = <%= node[:kannel][:smsbox_port] %>
+log-file = <%= node[:kannel][:bearerbox_log_file] %>
+log-level = <%= node[:kannel][:bearerbox_log_level] %>
+access-log = <%= node[:kannel][:bearerbox_access_log] %>
+store-type = <%= node[:kannel][:store_type] %>
+store-location = <%= node[:kannel][:store_location] %>
+box-deny-ip = <%= node[:kannel][:box_deny_ip] %>
+box-allow-ip = <%= node[:kannel][:box_allow_ip] %>
+
+group = smsbox
+smsbox-id = <%= node[:kannel][:smsbox_id] %>
+bearerbox-host = <%= node[:kannel][:bearerbox_host] %>
+log-file = <%= node[:kannel][:smsbox_log_file] %>
+log-level = <%= node[:kannel][:smsbox_log_level] %>
+sendsms-port = <%= node[:kannel][:sendsms_port] %> 
+access-log = <%= node[:kannel][:smsbox_access_log] %>
+reply-couldnotfetch = <%= node[:kannel][:reply_couldnotfetch] %>
+reply-requestfailed = <%= node[:kannel][:reply_requestfailed] %>
+reply-couldnotrepresent = <%= node[:kannel][:reply_couldnotrepresent] %>
+http-request-retry = <%= node[:kannel][:http_request_retry] %>
+http-queue-delay = <%= node[:kannel][:http_queue_delay] %>
+
+group = smsbox-route
+smsbox-id = <%= node[:kannel][:smsbox_id] %>
+smsc-id = <%= node[:kannel][:smsc_id] %>
+#shortcode = <%= node[:kannel][:shortcode] %>
+
+# send-sms user groups
+include = "<%= node[:kannel][:config_folder_path] %>/users"
+
+# smsc centers
+include = "<%= node[:kannel][:config_folder_path] %>/smsc"
+
+# sms services
+include = "<%= node[:kannel][:config_folder_path] %>/services"

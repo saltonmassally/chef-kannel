@@ -1,0 +1,7 @@
+#directs all requests to smssuite
+group = sms-service
+keyword = <%= node[:kannel][:service_keyword] %>
+catch-all = <%= node[:kannel][:service_catchall] %>
+max-messages = <%= node[:kannel][:service_max_messages] %>
+get-url = <%= node[:kannel][:service_get_url] %>
+
