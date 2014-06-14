@@ -6,13 +6,13 @@ service "kannel" do
   supports :status => true, :start => true, :stop => true, :restart => true
 end
 
-cookbook_file "#{Chef::Config[:file_cache_path]}/kannel_1.5.0-0_amd64.deb" do
-    source "kannel_1.5.0-0_amd64.deb"
+cookbook_file "#{Chef::Config[:file_cache_path]}/kannel_1.5.0-0_#{node['kernel']['machine']}.deb" do
+    source "kannel_1.5.0-0_#{node['kernel']['machine']}.deb"
     action :create_if_missing
 end
 
 dpkg_package  "kannel" do
-    source  "#{Chef::Config[:file_cache_path]}/kannel_1.5.0-0_amd64.deb"
+    source  "#{Chef::Config[:file_cache_path]}/kannel_1.5.0-0_#{node['kernel']['machine']}.deb"
     action :install
 end
 
