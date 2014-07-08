@@ -4,7 +4,7 @@ maintainer_email "salton.massally@gmail.com"
 license          "MIT"
 description      "Installs/Configures Kannel - heavily based on https://github.com/krishnenc/chef-kannel"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.1.5"
+version          "0.1.6"
 
 %w[ubuntu].each do |os|
   supports os
