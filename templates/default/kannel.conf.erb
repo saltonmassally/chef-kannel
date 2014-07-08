@@ -28,11 +28,12 @@ reply-requestfailed = <%= node[:kannel][:reply_requestfailed] %>
 reply-couldnotrepresent = <%= node[:kannel][:reply_couldnotrepresent] %>
 http-request-retry = <%= node[:kannel][:http_request_retry] %>
 http-queue-delay = <%= node[:kannel][:http_queue_delay] %>
+global-sender = <%= node[:kannel][:global_sender] %>
 
 group = smsbox-route
 smsbox-id = <%= node[:kannel][:smsbox_id] %>
 smsc-id = <%= node[:kannel][:smsc_id] %>
-#shortcode = <%= node[:kannel][:shortcode] %>
+shortcode = <%= node[:kannel][:shortcode] %>
 
 # send-sms user groups
 include = "<%= node[:kannel][:config_folder_path] %>/users"

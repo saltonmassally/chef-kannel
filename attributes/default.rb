@@ -27,7 +27,8 @@ default[:kannel][:http_request_retry] = 5
 default[:kannel][:http_queue_delay] = 10
 
 default[:kannel][:smsc_id] = 'africell'
-default[:kannel][:shortcode] = 2424
+default[:kannel][:shortcode] = ''
+default[:kannel][:global_sender] = ''
 default[:kannel][:smsc_log_level] = 0
 
 default[:kannel][:sendsms_username] = 'user'
